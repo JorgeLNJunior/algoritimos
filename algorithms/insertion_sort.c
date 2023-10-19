@@ -1,6 +1,7 @@
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-int *insertion_sort(int *arr, signed int size)
+int *insertion_sort(int *arr, size_t size)
 {
   for (int i = 1; i < size; i++)
   {
