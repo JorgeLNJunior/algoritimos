@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int *insertion_sort(int *arr, size_t size)
+int *insertion_sort(int *arr, size_t const size)
 {
   for (int i = 1; i < size; i++)
   {
-    const int current_value = arr[i];
+    int const current_value = arr[i];
     int previous_index = i - 1;
 
     while (arr[previous_index] > current_value)
