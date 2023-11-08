@@ -2,11 +2,11 @@
 
 #include "array.h"
 
-struct Array array_create(unsigned int capacity)
+Array array_create(unsigned int capacity)
 {
   int *pointer = malloc(sizeof(int) * capacity);
 
-  struct Array arr;
+  Array arr;
   arr.size = 0;
   arr.capacity = capacity;
   arr.data = pointer;
@@ -14,7 +14,7 @@ struct Array array_create(unsigned int capacity)
   return arr;
 }
 
-void array_resize(struct Array *arr)
+void array_resize(Array *arr)
 {
   int const new_capacity = arr->capacity * 2;
   int *new_data = realloc(arr->data, sizeof(int) * new_capacity);
@@ -23,26 +23,26 @@ void array_resize(struct Array *arr)
   arr->data = new_data;
 }
 
-void array_free(struct Array *arr)
+void array_free(Array *arr)
 {
   free(arr->data);
   arr->size = 0;
   arr->capacity = 0;
 }
 
-int array_at(unsigned int position, struct Array *arr)
+int array_at(unsigned int position, Array *arr)
 {
   return *(arr->data + position);
 }
 
-void array_push(int item, struct Array *arr)
+void array_push(int item, Array *arr)
 {
   if (arr->size == arr->capacity) array_resize(arr);
   *(arr->data + arr->size) = item;
   arr->size = ++arr->size;
 }
 
-void array_insert(unsigned int index, int item, struct Array *arr)
+void array_insert(unsigned int index, int item, Array *arr)
 {
   if (arr->size == arr->capacity) array_resize(arr);
 
@@ -54,7 +54,7 @@ void array_insert(unsigned int index, int item, struct Array *arr)
   arr->size = ++arr->size;
 }
 
-int array_pop(struct Array *arr) {
+int array_pop(Array *arr) {
   int const last_index = arr->size - 1;
   int const last_value = *(arr->data + last_index);
 
@@ -66,7 +66,7 @@ int array_pop(struct Array *arr) {
   return last_value;
 }
 
-int array_find(int item, struct Array *arr) {
+int array_find(int item, Array *arr) {
   for (int i = 0; i < arr->size; i++) {
     if (*(arr->data + i) == item) return i;
   }

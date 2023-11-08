@@ -7,7 +7,7 @@ void test_array_create()
 {
   int const initial_size = 0;
 
-  struct Array arr = array_create(ARRAY_CAPACITY);
+  Array arr = array_create(ARRAY_CAPACITY);
 
   TEST_ASSERT_EQUAL_UINT(ARRAY_CAPACITY, arr.capacity);
   TEST_ASSERT_EQUAL_UINT(initial_size, arr.size);
@@ -21,7 +21,7 @@ void test_array_free()
   int const final_capacity = 0;
   int const final_size = 0;
 
-  struct Array arr = array_create(ARRAY_CAPACITY);
+  Array arr = array_create(ARRAY_CAPACITY);
 
   array_free(&arr);
 
@@ -31,7 +31,7 @@ void test_array_free()
 
 void test_array_at()
 {
-  struct Array arr = array_create(ARRAY_CAPACITY);
+  Array arr = array_create(ARRAY_CAPACITY);
   int const item = 55;
   int const index = 3;
 
@@ -46,7 +46,7 @@ void test_array_at()
 
 void test_array_push()
 {
-  struct Array arr = array_create(ARRAY_CAPACITY);
+  Array arr = array_create(ARRAY_CAPACITY);
   int const item = 55;
 
   array_push(item, &arr);
@@ -60,7 +60,7 @@ void test_array_push()
 
 void test_array_pop()
 {
-  struct Array arr = array_create(ARRAY_CAPACITY);
+  Array arr = array_create(ARRAY_CAPACITY);
   int const item = 55;
 
   array_push(item, &arr);
@@ -74,7 +74,7 @@ void test_array_pop()
 
 void test_array_find()
 {
-  struct Array arr = array_create(ARRAY_CAPACITY);
+  Array arr = array_create(ARRAY_CAPACITY);
   int item = 55;
   int index = 0;
 
