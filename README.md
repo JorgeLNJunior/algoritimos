@@ -1,6 +1,14 @@
-## Algorítimos e Estruturas de Dados
+## Algoritimos e Estruturas de Dados
 
 Repositório usado para estudos e implementação de algorítimos e estruturas de dados na linguagem de programação C.
+
+### Algoritimos
+
+- [Insertion sort](algorithms/insertion_sort.md)
+
+### Estruturas de dados
+
+- [Array](data_structures/array.md)
 
 ## Materiais
 
