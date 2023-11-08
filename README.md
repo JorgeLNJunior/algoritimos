@@ -7,5 +7,6 @@ Repositório usado para estudos e implementação de algorítimos e estruturas d
 Materiais de estudo e referência.
 
 - [The C programing language](https://www.amazon.com/Programming-Language-PROGRAMMING-LANG-_p2-ebook/dp/B009ZUZ9FW?language=pt_BR)
-- [Algoritmos - Teoria e Prática](https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996)
+- [Algorithms in C](https://www.amazon.com/Algorithms-Parts-1-5-Bundle-Fundamentals/dp/0201756080)
+- [Coding Interview University](https://github.com/jwasham/coding-interview-university)
 - [Dev Docs](https://devdocs.io/c/)
