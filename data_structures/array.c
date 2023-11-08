@@ -1,10 +1,16 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "array.h"
 
 Array array_create(unsigned int capacity)
 {
   int *pointer = malloc(sizeof(int) * capacity);
+
+  if (pointer == NULL) {
+    printf("not enough memory");
+    exit(1);
+  }
 
   Array arr;
   arr.size = 0;
@@ -18,6 +24,11 @@ void array_resize(Array *arr)
 {
   int const new_capacity = arr->capacity * 2;
   int *new_data = realloc(arr->data, sizeof(int) * new_capacity);
+
+    if (new_data == NULL) {
+    printf("not enough memory");
+    exit(1);
+  }
 
   arr->capacity = new_capacity;
   arr->data = new_data;
