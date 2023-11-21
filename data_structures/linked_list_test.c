@@ -138,8 +138,7 @@ void test_back()
   int const nodeValue = rand();
 
   List *list = list_create();
-  Node *node = list_create_node(nodeValue);
-  list->head->next = node;
+  list_push_back(list, nodeValue);
 
   int const result = list_back(list);
 

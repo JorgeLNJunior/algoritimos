@@ -7,6 +7,7 @@ List *list_create()
 {
   List *list = malloc(sizeof(List));
   list->head = list_create_node(0);
+  list->tail = list_create_node(0);
   return list;
 }
 
@@ -93,6 +94,7 @@ void list_push_back(List *list, int value)
   while(temp->next != NULL) temp = temp->next;
 
   temp->next = node;
+  list->tail->next = node;
 }
 
 int list_front(List *list)
@@ -103,9 +105,7 @@ int list_front(List *list)
 
 int list_back(List *list)
 {
-  Node *node = list->head;
-  while(node->next != NULL) node = node->next;
-  return node->value;
+  return list->tail->next->value;
 }
 
 void list_insert(List *list, unsigned int index, int value)
@@ -159,6 +159,7 @@ void list_reverse(List *list)
     currentNode = nextNode;
   }
 
+  list->tail->next = list->head->next;
   list->head->next = currentNode;
 }
 

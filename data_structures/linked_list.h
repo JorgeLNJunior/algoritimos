@@ -8,6 +8,7 @@ typedef struct Node {
 
 typedef struct List {
   Node *head;
+  Node *tail;
 } List;
 
 // creates a linked list.
