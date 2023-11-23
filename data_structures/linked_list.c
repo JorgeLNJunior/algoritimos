@@ -74,14 +74,14 @@ void list_push_front(List *list, int value)
 
 int list_pop_front(List *list)
 {
-  Node *firstNode = list->head->next;
-  if(firstNode == NULL) exit(1);
+  Node *first_node = list->head->next;
+  if(first_node == NULL) exit(1);
 
-  Node *secondNode = firstNode->next;
+  Node *secondNode = first_node->next;
   list->head->next = secondNode;
 
-  int const value = firstNode->value;
-  free(firstNode);
+  int const value = first_node->value;
+  free(first_node);
 
   return value;
 }
@@ -110,74 +110,74 @@ int list_back(List *list)
 
 void list_insert(List *list, unsigned int index, int value)
 {
-  unsigned int currentIndex = 0;
+  unsigned int current_index = 0;
   Node *node = list_create_node(value);
 
-  Node *previousNode = list->head;
-  Node *currentNode = list->head;
+  Node *previous_node = list->head;
+  Node *current_node = list->head;
 
-  while(currentIndex < index)
+  while(current_index < index)
   {
-    previousNode = currentNode;
-    currentNode = currentNode->next;
-    currentIndex++;
+    previous_node = current_node;
+    current_node = current_node->next;
+    current_index++;
   }
 
-  node->next = currentNode;
-  previousNode->next = node;
+  node->next = current_node;
+  previous_node->next = node;
 }
 
 void list_erase(List *list, unsigned int index)
 {
-  int unsigned currentIndex = 0;
+  int unsigned current_index = 0;
 
-  Node *previousNode = list->head;
-  Node *currentNode = list->head;
+  Node *previous_node = list->head;
+  Node *current_node = list->head;
 
-  while(currentIndex < index)
+  while(current_index < index)
   {
-    previousNode = currentNode;
-    currentNode = currentNode->next;
-    currentIndex++;
+    previous_node = current_node;
+    current_node = current_node->next;
+    current_index++;
   }
 
-  previousNode->next = currentNode->next;
-  free(currentNode);
+  previous_node->next = current_node->next;
+  free(current_node);
 }
 
 void list_reverse(List *list)
 {
-  Node *previousNode = list->head->next;
-  Node *currentNode = list->head->next;
-  Node *nextNode = NULL;
+  Node *previous_node = list->head->next;
+  Node *current_node = list->head->next;
+  Node *next_node = NULL;
 
-  while(currentNode->next != NULL)
+  while(current_node->next != NULL)
   {
-    nextNode = currentNode->next;
-    currentNode->next = previousNode;
-    previousNode = currentNode;
-    currentNode = nextNode;
+    next_node = current_node->next;
+    current_node->next = previous_node;
+    previous_node = current_node;
+    current_node = next_node;
   }
 
   list->tail->next = list->head->next;
-  list->head->next = currentNode;
+  list->head->next = current_node;
 }
 
 void list_remove_value(List *list, int value)
 {
-  Node *previousNode = list->head;
-  Node *currentNode = list->head;
+  Node *previous_node = list->head;
+  Node *current_node = list->head;
 
-  while(currentNode != NULL)
+  while(current_node != NULL)
   {
-    if (currentNode->value == value)
+    if (current_node->value == value)
     {
-      previousNode->next = currentNode->next;
-      free(currentNode);
+      previous_node->next = current_node->next;
+      free(current_node);
       break;
     }
 
-    previousNode = currentNode;
-    currentNode = currentNode->next;
+    previous_node = current_node;
+    current_node = current_node->next;
   }
 }

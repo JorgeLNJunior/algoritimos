@@ -72,32 +72,32 @@ void test_value_at()
 
 void test_push_front()
 {
-  int const nodeValue = rand();
+  int const node_value = rand();
 
   List *list = list_create();
   Node *node = list_create_node(rand());
   list->head->next = node;
 
-  list_push_front(list, nodeValue);
+  list_push_front(list, node_value);
 
   int const result = list_value_at(list, 1);
 
-  TEST_ASSERT_EQUAL_INT(nodeValue, result);
+  TEST_ASSERT_EQUAL_INT(node_value, result);
 
   list_free(list);
 }
 
 void test_pop_front()
 {
-  int const nodeValue = rand();
+  int const node_value = rand();
 
   List *list = list_create();
-  Node *node = list_create_node(nodeValue);
+  Node *node = list_create_node(node_value);
   list->head->next = node;
 
   int const result = list_pop_front(list);
 
-  TEST_ASSERT_EQUAL_INT(result, nodeValue);
+  TEST_ASSERT_EQUAL_INT(result, node_value);
   TEST_ASSERT_EQUAL_MEMORY(NULL, list->head->next, sizeof(NULL));
 
   list_free(list);
@@ -105,65 +105,65 @@ void test_pop_front()
 
 void test_push_back()
 {
-  int const nodeValue = rand();
+  int const node_value = rand();
 
   List *list = list_create();
 
-  list_push_back(list, nodeValue);
+  list_push_back(list, node_value);
 
   int const result = list_value_at(list, 1);
 
-  TEST_ASSERT_EQUAL_UINT(nodeValue, result);
+  TEST_ASSERT_EQUAL_UINT(node_value, result);
 
   list_free(list);
 }
 
 void test_front()
 {
-  int const nodeValue = rand();
+  int const node_value = rand();
 
   List *list = list_create();
-  Node *node = list_create_node(nodeValue);
+  Node *node = list_create_node(node_value);
   list->head->next = node;
 
   int const result = list_front(list);
 
-  TEST_ASSERT_EQUAL_INT(nodeValue, result);
+  TEST_ASSERT_EQUAL_INT(node_value, result);
 
   list_free(list);
 }
 
 void test_back()
 {
-  int const nodeValue = rand();
+  int const node_value = rand();
 
   List *list = list_create();
-  list_push_back(list, nodeValue);
+  list_push_back(list, node_value);
 
   int const result = list_back(list);
 
-  TEST_ASSERT_EQUAL_INT(nodeValue, result);
+  TEST_ASSERT_EQUAL_INT(node_value, result);
 
   list_free(list);
 }
 
 void test_insert()
 {
-  int const firstNodeValue = rand();
-  int const insertNodeValue = rand();
+  int const first_node_value = rand();
+  int const insert_node_value = rand();
   int unsigned const index = 1;
 
   List *list = list_create();
-  Node *firstNode = list_create_node(firstNodeValue);
-  list->head->next = firstNode;
+  Node *first_node = list_create_node(first_node_value);
+  list->head->next = first_node;
 
-  list_insert(list, index, insertNodeValue);
+  list_insert(list, index, insert_node_value);
 
   int const insertNodeResult = list_value_at(list, index);
-  int const firstNodeResult = list_value_at(list, index + 1);
+  int const first_nodeResult = list_value_at(list, index + 1);
 
-  TEST_ASSERT_EQUAL_INT(insertNodeValue, insertNodeResult);
-  TEST_ASSERT_EQUAL_INT(firstNodeValue, firstNodeResult);
+  TEST_ASSERT_EQUAL_INT(insert_node_value, insertNodeResult);
+  TEST_ASSERT_EQUAL_INT(first_node_value, first_nodeResult);
 
   list_free(list);
 }
@@ -181,35 +181,35 @@ void test_erase()
 
 void test_reverse()
 {
-  int const firtNodeValue = rand();
-  int const secondNodeValue = rand();
+  int const first_node_value = rand();
+  int const second_node_value = rand();
 
   List *list = list_create();
-  Node *firtsNode = list_create_node(firtNodeValue);
-  Node *secondNode = list_create_node(secondNodeValue );
+  Node *firts_node = list_create_node(first_node_value);
+  Node *second_node = list_create_node(second_node_value);
 
-  firtsNode->next = secondNode;
-  list->head->next = firtsNode;
+  firts_node->next = second_node;
+  list->head->next = firts_node;
 
   list_reverse(list);
 
-  TEST_ASSERT_EQUAL_INT(list->head->next->value, secondNodeValue);
+  TEST_ASSERT_EQUAL_INT(list->head->next->value, second_node_value);
 }
 
 void test_remove_value()
 {
-  int const secondNodeValue = rand();
+  int const second_node_value = rand();
 
   List *list = list_create();
-  Node *firstNode = list_create_node(rand());
-  Node *secondNode = list_create_node(secondNodeValue);
+  Node *first_node = list_create_node(rand());
+  Node *second_node = list_create_node(second_node_value);
 
-  list->head->next = firstNode;
-  firstNode->next = secondNode;
+  list->head->next = first_node;
+  first_node->next = second_node;
 
-  list_remove_value(list, firstNode->value);
+  list_remove_value(list, first_node->value);
 
-  TEST_ASSERT_EQUAL_INT(secondNodeValue, list->head->next->value);
+  TEST_ASSERT_EQUAL_INT(second_node_value, list->head->next->value);
 }
 
 void setUp() {}
