@@ -9,3 +9,7 @@ gcc data_structures/array_test.c data_structures/array.c libs/unity/unity.c -o b
 # linked list
 gcc data_structures/linked_list_test.c data_structures/linked_list.c libs/unity/unity.c -o bin/linked_list_test
 ./bin/linked_list_test
+
+# queue
+gcc data_structures/queue_test.c data_structures/queue.c data_structures/linked_list.c libs/unity/unity.c -o bin/queue_test
+./bin/queue_test
