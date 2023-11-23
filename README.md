@@ -9,6 +9,8 @@ Repositório usado para estudos e implementação de algorítimos e estruturas d
 ### Estruturas de dados
 
 - [Array](data_structures/array.md)
+- [Linked List](data_structures/linked_list.md)
+- [Queue](data_structures/queue.md)
 
 ## Materiais
 
