@@ -19,7 +19,7 @@ Queue *queue_create()
   return queue;
 }
 
-void *queue_free(Queue *queue)
+void queue_free(Queue *queue)
 {
   list_free(queue->data);
   free(queue);

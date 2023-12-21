@@ -11,7 +11,7 @@ typedef struct Queue {
 Queue *queue_create();
 
 // deletes a queue.
-void *queue_free(Queue *queue);
+void queue_free(Queue *queue);
 
 // adds an item to the queue.
 void queue_enqueue(Queue *queue, int value);
