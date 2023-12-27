@@ -72,6 +72,15 @@ void hash_table_add(HashTable *table, char *key, char *value)
       item->key = key;
       item->value = value;
       table->data[index] = item;
+      table->size = table->size + 1;
+      break;
+    }
+    if(strcmp(table->data[index]->key, dummy_key) == 0) {
+      HashTableItem *item = malloc(sizeof(HashTableItem));
+      item->key = key;
+      item->value = value;
+      table->data[index] = item;
+      table->size = table->size + 1;
       break;
     }
   }
