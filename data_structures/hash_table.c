@@ -31,7 +31,6 @@ void hash_table_free(HashTable *table)
   free(table);
 }
 
-int hash(const char *key, size_t table_size)
 int hash(const char *key, size_t table_capacity)
 {
   unsigned long hash = 2166136261;

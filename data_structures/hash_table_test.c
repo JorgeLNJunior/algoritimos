@@ -3,7 +3,7 @@
 
 void test_create()
 {
-  HashTable *table = hash_table_create(DEFAULT_TABLE_SIZE);
+  HashTable *table = hash_table_create(DEFAULT_TABLE_CAPACITY);
 
   TEST_ASSERT_NOT_EMPTY(&table);
   TEST_ASSERT_NOT_EMPTY(&(table->data));
@@ -13,19 +13,19 @@ void test_create()
 
 void test_hash()
 {
-  int position = hash("key", DEFAULT_TABLE_SIZE);
+  int position = hash("key", DEFAULT_TABLE_CAPACITY);
 
   TEST_ASSERT_GREATER_THAN_UINT(0, position);
-  TEST_ASSERT_LESS_THAN_UINT(DEFAULT_TABLE_SIZE, position);
+  TEST_ASSERT_LESS_THAN_UINT(DEFAULT_TABLE_CAPACITY, position);
 }
 
 void test_add()
 {
-  HashTable *table = hash_table_create(DEFAULT_TABLE_SIZE);
+  HashTable *table = hash_table_create(DEFAULT_TABLE_CAPACITY);
   char *key = "key";
   char *value = "value";
 
-  unsigned int position = hash(key, DEFAULT_TABLE_SIZE);
+  unsigned int position = hash(key, DEFAULT_TABLE_CAPACITY);
 
   hash_table_add(table, key, value);
 
@@ -37,7 +37,7 @@ void test_add()
 
 void test_key_exists()
 {
-  HashTable *table = hash_table_create(DEFAULT_TABLE_SIZE);
+  HashTable *table = hash_table_create(DEFAULT_TABLE_CAPACITY);
   char *key = "key";
   hash_table_add(table, key, "value");
 
@@ -55,7 +55,7 @@ void test_key_exists()
 
 void test_get()
 {
-  HashTable *table = hash_table_create(DEFAULT_TABLE_SIZE);
+  HashTable *table = hash_table_create(DEFAULT_TABLE_CAPACITY);
   char *key = "key";
   char *value = "value";
 
@@ -69,7 +69,7 @@ void test_get()
 
 void test_remove()
 {
-  HashTable *table = hash_table_create(DEFAULT_TABLE_SIZE);
+  HashTable *table = hash_table_create(DEFAULT_TABLE_CAPACITY);
   char *key = "key";
 
   hash_table_add(table, key, "value");
