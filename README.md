@@ -5,6 +5,7 @@ Repositório usado para estudos e implementação de algorítimos e estruturas d
 ### Algoritimos
 
 - [Insertion sort](algorithms/insertion_sort.md)
+- [Binary search](algorithms/binary_search.md)
 
 ### Estruturas de dados
 

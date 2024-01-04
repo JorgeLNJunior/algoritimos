@@ -17,3 +17,8 @@ gcc data_structures/queue_test.c data_structures/queue.c data_structures/linked_
 # hash_table
 gcc data_structures/hash_table_test.c data_structures/hash_table.c data_structures/linked_list.c libs/unity/unity.c -o bin/hash_table_test
 ./bin/hash_table_test
+
+# binary search
+gcc algorithms/binary_search_test.c algorithms/binary_search.c libs/unity/unity.c -o bin/binary_search
+./bin/binary_search
+
