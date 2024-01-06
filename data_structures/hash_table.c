@@ -3,7 +3,6 @@
 
 char *dummy_key = "<dummy>";
 unsigned int const DEFAULT_TABLE_CAPACITY = 100;
-unsigned int const GROWTH_FACTOR = 2;
 
 HashTable *hash_table_create(const size_t capacity)
 {
