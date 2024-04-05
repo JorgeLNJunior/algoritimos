@@ -22,3 +22,6 @@ gcc data_structures/hash_table_test.c data_structures/hash_table.c data_structur
 gcc algorithms/binary_search_test.c algorithms/binary_search.c libs/unity/unity.c -o bin/binary_search
 ./bin/binary_search
 
+# binary search tree
+gcc data_structures/binary_search_tree_test.c data_structures/binary_search_tree.c libs/unity/unity.c -o bin/binary_search_tree
+./bin/binary_search_tree

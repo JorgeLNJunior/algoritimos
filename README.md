@@ -13,6 +13,7 @@ Repositório usado para estudos e implementação de algorítimos e estruturas d
 - [Linked List](data_structures/linked_list.md)
 - [Queue](data_structures/queue.md)
 - [Hash Table](data_structures/hash_table.md)
+- [Tree/Binary Search Tree](data_structures/tree.md)
 
 ## Materiais
 
