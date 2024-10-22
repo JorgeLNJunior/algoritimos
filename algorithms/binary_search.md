@@ -10,6 +10,10 @@ O algoritimo verifica se o elemento no meio da lista é igual ao elemento procur
 
 - Busca em O(log n).
 
+### Desvantagens
+
+- Só funciona em listas ordenadas.
+
 ### Exemplo
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Binary-search-work.gif/220px-Binary-search-work.gif" width="200px" />
